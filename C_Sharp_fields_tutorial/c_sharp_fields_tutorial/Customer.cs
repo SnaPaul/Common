@@ -8,9 +8,9 @@ namespace c_sharp_fields_tutorial
 {
     public class Customer
     {
-        public int Id;
-        public string Name;
-        public readonly List<Order> Orders = new List<Order>();
+        private int Id;
+        private string Name;
+        private readonly List<Order> Orders = new List<Order>();
 
         public Customer(int id)
         {
@@ -26,6 +26,16 @@ namespace c_sharp_fields_tutorial
         public void Promote()
         {
             //Orders = new List<Order>();
+        }
+
+        public void addOrders(Order order)
+        {
+            Orders.Add(order);
+        }
+
+        public List<Order> getOrders()
+        {
+            return Orders;
         }
     }
 }

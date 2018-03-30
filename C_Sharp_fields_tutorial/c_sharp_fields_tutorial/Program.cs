@@ -12,12 +12,12 @@ namespace c_sharp_fields_tutorial
         {
             var customer = new Customer(1);
 
-            customer.Orders.Add(new Order());
-            customer.Orders.Add(new Order());
+            customer.addOrders(new Order());
+            customer.addOrders(new Order());
 
             customer.Promote();
 
-            Console.WriteLine(customer.Orders.Count);
+            Console.WriteLine(customer.getOrders().Count);
         }
     }
 }
