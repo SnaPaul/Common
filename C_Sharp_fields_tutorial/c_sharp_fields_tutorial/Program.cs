@@ -15,7 +15,7 @@ namespace c_sharp_fields_tutorial
             HandleNullable();
             HandleNullable();
 
-            //Comment just to change something in this file
+            //Just to change something in this file
             //for testing the git rebase feature
 
         }
