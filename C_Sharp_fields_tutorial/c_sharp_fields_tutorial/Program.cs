@@ -14,6 +14,10 @@ namespace c_sharp_fields_tutorial
             //HandleBooks();
             HandleNullable();
             HandleNullable();
+
+            //Comment just to change something in this file
+            //for testing the git rebase feature
+
         }
 
         static void HandleCustomer()
