@@ -8,22 +8,19 @@ namespace c_sharp_fields_tutorial
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
-
             //HandleCustomer();
             //HandleBooks();
             HandleNullable();
             HandleNullable();
-
         }
 
         static void HandleCustomer()
         {
             var customer = new Customer(1);
 
+            customer.addOrders(new Order());
             customer.addOrders(new Order());
             customer.addOrders(new Order());
 
