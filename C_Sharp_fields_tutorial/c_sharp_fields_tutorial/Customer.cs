@@ -8,20 +8,20 @@ namespace c_sharp_fields_tutorial
 {
     public class Customer
     {
-        private int Id;
-        private string Name;
-        private string State;
-        private readonly List<Order> Orders = new List<Order>();
+        private int _id;
+        private string _name;
+        private string _state;
+        private readonly List<Order> _orders = new List<Order>();
 
         public Customer(int id)
         {
-            this.Id = id;
+            this._id = id;
         }
 
         public Customer(int id, string name)
             : this(id)
         {
-            this.Name = name;
+            this._name = name;
         }
 
         public void Promote()
@@ -31,12 +31,12 @@ namespace c_sharp_fields_tutorial
 
         public void addOrders(Order order)
         {
-            Orders.Add(order);
+            _orders.Add(order);
         }
 
         public List<Order> getOrders()
         {
-            return Orders;
+            return _orders;
         }
 
     }
