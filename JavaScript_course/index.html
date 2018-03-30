@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Learning JavaScript</title>
+	<link rel="stylesheet" href="style.css" />
+</head>
+<body id="body">
+<div class="header">
+	<h1 id="heading">Learning JavaScript</h1>
+	<p>With brad Traversy</p>
+</div>
+
+<div class="container">
+
+	<!--button onclick="changeHeading()">Click me</button-->
+	
+	<!--button onmouseover="showDate()" onmouseout="clearDate()">Show Date</button>
+	<h1 id="time"></h1-->
+
+	<form method="post" action="something.php" name="myForm" onsubmit="return validateForm()">
+		<div>
+			<label>First Name</label>
+			<input type="text" name="firstName" id="firstName"/>
+		</div>
+		<div>
+			<label>Last Name</label>
+			<input type="text" name="lastName" id="lastName"/>
+		</div>
+		<br />
+		<input type="submit" value="Submit" />
+	</form>
+
+</div>
+
+<script>
+
+	function validateForm(){
+		var firstName = document.forms["myForm"]["firstName"].value;
+		if (firstName == null || firstName == "")
+		{
+			alert ("First name is required");
+			return false;
+		}
+
+		if (firstName.length < 3)
+		{
+			alert ("First name must have at least 3 characters ");
+			return false;
+		}
+	};
+	/*function showDate(){
+
+		var time = document.getElementById('time');
+		time.innerHTML = Date();
+
+	};
+
+	function clearDate(){
+
+		var time = document.getElementById('time');
+		time.innerHTML = '';
+
+	};*/
+
+	/*function changeHeading(){
+
+		var heading = document.getElementById('heading');
+		heading.innerHTML = 'Heading changed!'
+
+	};*/
+
+	/*function changeText(button){
+		switch(button.innerHTML){
+			case 'You clicked!':
+				button.innerHTML='Click me';
+				break;
+			case 'Click me':
+				button.innerHTML='You clicked!';
+				break;
+			default:
+				button.innerHTML='Ooops!';
+		};
+
+	};*/
+
+	//alert('Script Tags Work');
+
+	// Number
+	// String
+	// Array
+	// Object
+
+	//var number1 = '35';
+	//var number2 = '40';
+
+	//alert ('My favority number is ' + number1 + number2);
+
+	//Variable can be created with letters, numbers, underscores, dollar signs
+	//begin with a letter
+	//case sensitive
+
+	//var colors = ['red','blue','green'];
+
+	//document.write(colors[0] + '</br>' + colors[1]);
+
+	//var colors1 = new Array('red', 'blue', 'green');
+
+	//document.write(colors1[0] + '</br>' + colors1[1]);
+
+	//colors1[3] = 'orange';
+
+	//colors1.push('purple');
+
+	//document.write(colors1, ' ', colors1.length);
+
+
+	//for loop
+	/*for (var i = 0; i <= 10; i++) {
+		console.log('nice number: ', i);
+		}*/
+
+	//while loop
+	/*i = 0;
+	while(i < 10){
+		if(i == 0)
+		{
+			console.log('while loop:');
+		}
+		console.log('nice number: ', i);
+		i++;
+	}*/
+
+	//for each lpop
+	/*colors.reverse();
+	console.log('for each loop');
+	colors.forEach(function(color){
+		console.log(color);
+	});*/
+
+ 	//CONDITIONALS
+ 	/*var var1 = 1;
+ 	var var2 = 1;
+	if(var1 != var2 && var1 != var2){
+		console.log('This is true.');
+	}
+	else{
+		console.log('This is false.');
+	}*/
+
+	//switch case exists in JavaScript as well
+
+	//object literal
+	/*var person = {
+		firstName: 'Paul',
+		lastName: 'Snajder',
+		age: 39,
+		children: ['Max', 'Alex'],
+		adress:{
+			street: 'Buerschlingstrasse',
+			city:'Amberg',
+			state: 'Bayern'
+		},
+		fullName: function(){
+			return this.firstName + " " + this.lastName;
+		}
+	}
+
+	console.log(person.fullName());*/
+
+	/*var apple = new Object();
+
+	apple.color = 'red';
+	apple.shape = 'round';
+
+	apple. describe = function(){
+		return 'An apple is the color '+this.color;
+
+	}
+	console.log(apple.describe());*/
+
+ 	//Constructor pattern
+	/*function Fruit(name, color, shape){
+ 		this.name = name;
+ 		this.color = color;
+ 		this.shape = shape;
+
+ 		this.describe = function(){
+ 			return 'A ' + this.name + ' is of the color ' + this.color; 
+ 		}
+ 	}
+
+ 	var apple = new Fruit('apple', 'red', 'round');
+
+ 	console.log(apple.describe());*/
+
+ 	/*var users = [
+	 	{
+	 		name: 'John Doe',
+	 		age: 30
+	 	},
+	 	{
+	 		name: 'John Doe1',
+	 		age: 301
+	 	},
+	 	{
+	 		name: 'John Doe2',
+	 		age: 302
+	 	}
+ 	];
+
+ 	console.log(users[2].age);*/
+</script>
+
+</body>
+</html>
