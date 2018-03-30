@@ -8,15 +8,11 @@ namespace c_sharp_fields_tutorial
 {
     class Program
     {
-
-
         static void Main(string[] args)
         {
-
             //HandleCustomer();
             //HandleBooks();
             HandleNullable();
-
         }
 
         static void HandleCustomer()
