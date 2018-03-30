@@ -21,6 +21,7 @@ namespace c_sharp_fields_tutorial
 
             customer.addOrders(new Order());
             customer.addOrders(new Order());
+            customer.addOrders(new Order());
 
             customer.Promote();
 
