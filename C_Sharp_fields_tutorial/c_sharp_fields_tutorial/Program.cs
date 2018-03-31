@@ -12,12 +12,13 @@ namespace c_sharp_fields_tutorial
         {
             //HandleCustomer();
             //HandleBooks();
-            HandleNullable();
-            HandleNullable();
+            //HandleNullable();
+            //HandleNullable();
 
             //Just to change something in this file
             //for testing the git rebase feature
 
+            HandleVideoEncoding();
         }
 
         static void HandleCustomer()
@@ -55,6 +56,19 @@ namespace c_sharp_fields_tutorial
             var number = new Nullable<int>(5);
             Console.WriteLine("Has Value? -> " + number.HasValue);
             Console.WriteLine("Value: " + number.GetValueOrDefault());
+        }
+
+        static void HandleVideoEncoding()
+        {
+            var video = new Video() { Title = "Video 1" };
+            var videoEncoder = new VideoEncoder(); //publisher
+            var mailService = new MailService(); //subscriber
+            var messageService = new MessageService(); //subscriber
+
+            videoEncoder.VideoEncoded += mailService.OnVideoEncoded;
+            videoEncoder.VideoEncoded += messageService.OnVideoEncoded;
+
+            videoEncoder.Encode(video);
         }
     }
 }
