@@ -7,19 +7,23 @@ using System.Threading;
 
 namespace c_sharp_fields_tutorial
 {
-    class VideoEncoder
+    public class VideoEventArgs : EventArgs
+    {
+        public Video Video{ get; set;}
+    }
+    public class VideoEncoder
     {
         //1 - Define a deligate
         //2 - Define a event based on the deligate
         //3 - Raise the event
-        public delegate void VideoEncodedEventHandler(object source, EventArgs args);
+        public delegate void VideoEncodedEventHandler(object source, VideoEventArgs args);
         public event VideoEncodedEventHandler VideoEncoded;
-        protected virtual void OnVideoEncoded()
+        protected virtual void OnVideoEncoded(Video video)
         {
-            VideoEncoded?.Invoke(this, EventArgs.Empty); //same as following lines
+            VideoEncoded?.Invoke(this, new VideoEventArgs() { Video = video }); //same as following lines
             //if(VideoEncoded != null)
             //{
-            //    VideoEncoded(this, EventArgs.Empty);
+            //    VideoEncoded(this, VideoEventArgs.Empty);
             //}
         }
 
@@ -28,7 +32,7 @@ namespace c_sharp_fields_tutorial
             Console.WriteLine("Encoding Video...");
             Thread.Sleep(3000);
 
-            OnVideoEncoded();
+            OnVideoEncoded(video);
         }
 
        

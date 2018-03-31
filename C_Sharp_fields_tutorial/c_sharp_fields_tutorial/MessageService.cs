@@ -8,9 +8,9 @@ namespace c_sharp_fields_tutorial
 {
     public class MessageService
     {
-        public void OnVideoEncoded(object source, EventArgs args)
+        public void OnVideoEncoded(object source, VideoEventArgs e)
         {
-            Console.WriteLine("MessageService: Sending a text message...");
+            Console.WriteLine("MessageService: Sending a text message..." + e.Video.Title);
         }
     }
 }
