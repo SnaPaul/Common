@@ -10,7 +10,7 @@ namespace c_sharp_fields_tutorial
     {
         private int _id;
         private string _name;
-        private string _state;
+        //private string _state;
         private readonly List<Order> _orders = new List<Order>();
 
         public Customer(int id)
