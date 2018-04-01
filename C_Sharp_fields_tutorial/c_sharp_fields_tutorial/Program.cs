@@ -25,7 +25,7 @@ namespace c_sharp_fields_tutorial
 
         private static void DebuggingInVs()
         {
-            var numbers = new List<int> { 1, 2, 3, 4, 5, 6 };
+            var numbers = new List<int> { 1, 2, 3, 4, 5, 6};
             var smallests = GetSmallest(numbers, 3);
 
            foreach(var number in smallests)
@@ -36,13 +36,24 @@ namespace c_sharp_fields_tutorial
 
         public static List<int> GetSmallest(List<int> list, int count)
         {
+            if(list == null)
+            {
+                throw new ArgumentNullException("list", "List of elements is empty.");
+
+            }
+            if(count > list.Count || count <= 0)
+            {
+                throw new ArgumentOutOfRangeException("count", "Count has to be an number between 1 and count of elements in the list.");
+            }
+
+            var buffer = new List<int>(list);
             var smallests = new List<int>();
 
             while(smallests.Count < count)
             {
-                var min = GetSmallest(list);
+                var min = GetSmallest(buffer);
                 smallests.Add(min);
-                list.Remove(min);
+                buffer.Remove(min);
             }
 
             return smallests;
